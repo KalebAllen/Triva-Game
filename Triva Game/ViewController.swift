@@ -9,17 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var MainMenue: UINavigationBar!
+    //my buttons and lables
     @IBOutlet weak var Questions: UILabel!
     @IBOutlet weak var Answer1: UIButton!   // index num 0
     @IBOutlet weak var Answer2: UIButton!   // index num 1
     @IBOutlet weak var Answer3: UIButton!   // index num 2
     @IBOutlet weak var Answer4: UIButton!   // index num 3
-    @IBOutlet weak var ResetGame: UIBarButtonItem!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    
+    //pulls a question from the question array
     var currentQuestion: TriviaQuestion! {
         didSet {
             Questions.text = currentQuestion.question
@@ -33,7 +31,7 @@ class ViewController: UIViewController {
     var questions: [TriviaQuestion] = []
     
     var questionsPlaceholder: [TriviaQuestion] = []
-    
+    //shows what the players score currently is
     var score = 0 {
         didSet {
             scoreLabel.text = "\(score)"
@@ -57,7 +55,7 @@ class ViewController: UIViewController {
         randomIndex = Int(arc4random_uniform(UInt32(questions.count)))
         currentQuestion = questions [randomIndex]
     }
-    
+    //resets the whole game
     func resetGame() {
         score = 0
         if !questions.isEmpty {
@@ -68,16 +66,20 @@ class ViewController: UIViewController {
         //get a new place holder
         getNewQuestion()
     }
+    //My array of questions used in the game
     func populateQuestions() {
         let Question0 = TriviaQuestion(questions: "Who is the main character in Halo", Answers: ["Master Cheif", "Joker", "Joseph", "Samus"], correctIndex: 0)
         let Question1 = TriviaQuestion(questions: "What is the armor that Guts uses", Answers: ["Blazing Sword","Bersker Armor","Ki Blast", "Plasma Gernade"], correctIndex: 1)
         let Question2 = TriviaQuestion(questions: "Which Triforce does Zelda hold", Answers: ["Triforce of courage","TriForce of Bows","Tri force of Wisdom","Triforce of Power"], correctIndex: 2)
-        let Question3 = TriviaQuestion(questions: "What do you call a person who raises the dead", Answers:["necromorph","xenomorph","necromancer","pyromancer"], correctIndex: 3)
+        let Question3 = TriviaQuestion(questions: "a person who raises the dead is a...", Answers:["necromorph","xenomorph","necromancer","pyromancer"], correctIndex: 2)
+        let Question4 = TriviaQuestion(questions: "Who was responsible for starting the InJustice event", Answers: ["Batman","Harly Quinn","The Flash","The Joker"], correctIndex: 3)
+        
         print(Question0.correctAnswer)
         questions.append(Question0)
         questions.append(Question1)
         questions.append(Question2)
         questions.append(Question3)
+        questions.append(Question4)
     }
     // shows the user that they got the answer right
     func showCorrectAnswerAlert() {
@@ -105,9 +107,21 @@ class ViewController: UIViewController {
         inCorrectAlert.addAction(closeAction)
         self.present(inCorrectAlert, animated: true, completion: nil)
     }
+    //shwo an alert to show the user when game is over. game will reset and will show user score
+    func showGameOverAlert() {
+        //UIAlertController
+        let gameOverAlert = UIAlertController(title: "Results", message: "Game over! your score was\(score) out of \(questionsPlaceholder.count)", preferredStyle: .actionSheet)
+        //UIAlertAction
+        let resetAction = UIAlertAction(title: "Reset", style: .default) { _ in
+            self.resetGame()//reset function will be called when th reset button on the alert is clicked/tapped
+        }
+        //Add the action to the alert controller
+        gameOverAlert.addAction(resetAction)
+        //Present the alert controller
+        self.present(gameOverAlert, animated: true, completion: nil)
+    }
     
-    
-    
+    //sends rhe user an alert telling wather they got the answer right or wrong and adds/removes a point accordingly
     @IBAction func answerButtonTapped(_ sender: UIButton) {
         if sender.tag == currentQuestion.correctAnswersIndex {
             //they got the question right so we need to let them know
@@ -118,6 +132,9 @@ class ViewController: UIViewController {
             showIncorrectAnswerAlert()
             score -= 1
         }
+    }
+    @IBAction func ResetButtontapped(_ sender: Any) {
+        resetGame()
     }
 }
 
