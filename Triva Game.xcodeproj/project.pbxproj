@@ -12,6 +12,7 @@
 		0B7C33DF216BB40C003FB55F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C33DD216BB40C003FB55F /* Main.storyboard */; };
 		0B7C33E1216BB40D003FB55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C33E0216BB40D003FB55F /* Assets.xcassets */; };
 		0B7C33E4216BB40D003FB55F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7C33E2216BB40D003FB55F /* LaunchScreen.storyboard */; };
+		0BDB49EB216FC39600724B60 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB49EA216FC39500724B60 /* AddQuestionViewController.swift */; };
 		0BDC4FBE216CEA22004699C7 /* TriviaQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC4FBD216CEA22004699C7 /* TriviaQuestion.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		0B7C33E0216BB40D003FB55F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B7C33E3216BB40D003FB55F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B7C33E5216BB40E003FB55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BDB49EA216FC39500724B60 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 		0BDC4FBD216CEA22004699C7 /* TriviaQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				0B7C33E2216BB40D003FB55F /* LaunchScreen.storyboard */,
 				0B7C33E5216BB40E003FB55F /* Info.plist */,
 				0BDC4FBD216CEA22004699C7 /* TriviaQuestion.swift */,
+				0BDB49EA216FC39500724B60 /* AddQuestionViewController.swift */,
 			);
 			path = "Triva Game";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				0B7C33DC216BB40C003FB55F /* ViewController.swift in Sources */,
 				0BDC4FBE216CEA22004699C7 /* TriviaQuestion.swift in Sources */,
+				0BDB49EB216FC39600724B60 /* AddQuestionViewController.swift in Sources */,
 				0B7C33DA216BB40C003FB55F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
