@@ -249,15 +249,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Iv-0J-NOl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Iv-0J-NOl">
+                                <rect key="frame" x="0.0" y="71.5" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="1tu-sr-IEP"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press The button to start the game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq1-g7-f1M">
+                                <rect key="frame" x="29" y="242.5" width="317" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gXY-Kv-GfA" firstAttribute="bottom" secondItem="Iq1-g7-f1M" secondAttribute="bottom" constant="404" id="0r6-SH-iAm"/>
+                            <constraint firstItem="gXY-Kv-GfA" firstAttribute="trailing" secondItem="Iq1-g7-f1M" secondAttribute="trailing" constant="29" id="1u2-dp-SlN"/>
+                            <constraint firstItem="Iq1-g7-f1M" firstAttribute="leading" secondItem="gXY-Kv-GfA" secondAttribute="leading" constant="29" id="XBh-Co-F4C"/>
+                            <constraint firstItem="Iq1-g7-f1M" firstAttribute="top" secondItem="6Iv-0J-NOl" secondAttribute="bottom" constant="127" id="iIM-6o-TLN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gXY-Kv-GfA"/>
                     </view>
                     <navigationItem key="navigationItem" id="hRS-JN-5wk">
