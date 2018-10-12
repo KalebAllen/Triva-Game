@@ -49,11 +49,10 @@ class ViewController: UIViewController {
     func getNewQuestion() {
         if questions.count > 0 {
             randomIndex = Int(arc4random_uniform(UInt32(questions.count)))
+            currentQuestion = questions[randomIndex]
+        } else {
+            showGameOverAlert()
         }
-        /* let randomIndex = Int(arc4random_uniform(UInt32(questions.count)))
-         currentQuestion = questions[randomIndex] */
-        randomIndex = Int(arc4random_uniform(UInt32(questions.count)))
-        currentQuestion = questions [randomIndex]
     }
     //resets the whole game
     func resetGame() {
@@ -72,7 +71,8 @@ class ViewController: UIViewController {
         let Question1 = TriviaQuestion(questions: "What is the armor that Guts uses", Answers: ["Blazing Sword","Bersker Armor","Ki Blast", "Plasma Gernade"], correctIndex: 1)
         let Question2 = TriviaQuestion(questions: "Which Triforce does Zelda hold", Answers: ["Triforce of courage","TriForce of Bows","Tri force of Wisdom","Triforce of Power"], correctIndex: 2)
         let Question3 = TriviaQuestion(questions: "a person who raises the dead is a...", Answers:["necromorph","xenomorph","necromancer","pyromancer"], correctIndex: 2)
-        let Question4 = TriviaQuestion(questions: "Who was responsible for starting the InJustice event", Answers: ["Batman","Harly Quinn","The Flash","The Joker"], correctIndex: 3)
+        let Question4 = TriviaQuestion(questions: "Who was reposible for killing SuperMan", Answers: ["Doomsday","Solme Grundy","The Flash","BatMan"], correctIndex: 0)
+        let Question5 = TriviaQuestion(questions: "Who was the first person Venom bonded to", Answers: ["SpiderMan","DeadPool","Dr.Doom","CaptinAmerica"], correctIndex: 1)
         
         print(Question0.correctAnswer)
         questions.append(Question0)
@@ -80,6 +80,7 @@ class ViewController: UIViewController {
         questions.append(Question2)
         questions.append(Question3)
         questions.append(Question4)
+        questions.append(Question5)
     }
     // shows the user that they got the answer right
     func showCorrectAnswerAlert() {
@@ -136,6 +137,8 @@ class ViewController: UIViewController {
     @IBAction func ResetButtontapped(_ sender: Any) {
         resetGame()
     }
+    //unwind segway
+    @IBAction func unwindToQuizScreen(segue: UIStoryboardSegue) { }
 }
 
 

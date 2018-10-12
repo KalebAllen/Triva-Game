@@ -17,7 +17,7 @@ class AddQuestionViewController: UIViewController {
     @IBOutlet weak var CorrectAnswer: UISegmentedControl!
     @IBOutlet weak var Submit: UIButton!
     
-    
+    var newQuestion: TriviaQuestion!
     
     
     override func viewDidLoad() {
@@ -27,15 +27,19 @@ class AddQuestionViewController: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? ViewController {
+            // Append the new question to the Question Array
+            destination.questions.append(newQuestion)
+        }
+    }
+    
     func showErrorAlert() {
         let errorAlert = UIAlertController(title: "Alert", message: "Please enter in ALL feilds, or hit the back button to go back to the quiz.", preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Close", style: .default, handler: nil)
@@ -52,6 +56,8 @@ class AddQuestionViewController: UIViewController {
                 showErrorAlert()
                 return
         }
-        let newQuestion = TriviaQuestion(questions: question, Answers: [Answer1,Answer2,Answer3,Answer4], correctIndex: CorrectAnswer.selectedSegmentIndex)
+        newQuestion = TriviaQuestion(questions: question, Answers: [Answer1,Answer2,Answer3,Answer4], correctIndex: CorrectAnswer.selectedSegmentIndex)
+        self.performSegue(withIdentifier: "unwindToQuizScreen", sender: self)
+    
     }
 }
