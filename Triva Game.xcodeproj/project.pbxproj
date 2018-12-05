@@ -39,6 +39,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B089CBD21763A7300896776 /* storybord */ = {
+			isa = PBXGroup;
+			children = (
+				0B7C33E2216BB40D003FB55F /* LaunchScreen.storyboard */,
+				0B7C33DD216BB40C003FB55F /* Main.storyboard */,
+			);
+			path = storybord;
+			sourceTree = "<group>";
+		};
+		0B089CBE21763A9000896776 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0BDC4FBD216CEA22004699C7 /* TriviaQuestion.swift */,
+				0B7C33E0216BB40D003FB55F /* Assets.xcassets */,
+				0B7C33D9216BB40C003FB55F /* AppDelegate.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		0B7C33CD216BB40C003FB55F = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +77,10 @@
 		0B7C33D8216BB40C003FB55F /* Triva Game */ = {
 			isa = PBXGroup;
 			children = (
-				0B7C33D9216BB40C003FB55F /* AppDelegate.swift */,
+				0B089CBE21763A9000896776 /* Utilities */,
+				0B089CBD21763A7300896776 /* storybord */,
 				0B7C33DB216BB40C003FB55F /* ViewController.swift */,
-				0B7C33DD216BB40C003FB55F /* Main.storyboard */,
-				0B7C33E0216BB40D003FB55F /* Assets.xcassets */,
-				0B7C33E2216BB40D003FB55F /* LaunchScreen.storyboard */,
 				0B7C33E5216BB40E003FB55F /* Info.plist */,
-				0BDC4FBD216CEA22004699C7 /* TriviaQuestion.swift */,
 				0BDB49EA216FC39500724B60 /* AddQuestionViewController.swift */,
 			);
 			path = "Triva Game";
